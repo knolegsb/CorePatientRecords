@@ -4,5 +4,6 @@
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
+/// <reference path="template/ng-factory-service.js" />
 /// <reference path="template/ng-rest.js" />
 /// <reference path="template/ng-scope-module.js" />
