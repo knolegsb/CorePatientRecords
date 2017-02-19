@@ -1,0 +1,59 @@
+﻿@*@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Record App</title>
+</head>
+<body>
+    <div>
+        <h2>Patient Records</h2>
+        <ul id="patients"></ul>
+    </div>
+    <div>
+        <h2>Find Patient By Id</h2>
+        <input type="text" id="patientId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="patient"></p>
+    </div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = '/api/Patient';
+
+        $(document).ready(function () {
+            $.getJSON(uri).done(function (data) {
+                $.each(data, function (key, patient) {
+                    //console.log(patient);
+                    $('<li>', {
+                        text: formatPatientInfo(patient)
+                    }).appendTo($('#patients'));
+                });
+            });
+        });
+
+        function formatPatientInfo(patient) {
+            //console.log(patient);
+            if (patient)
+                return patient.lastName + ', ' + patient.firstName + ': ' + patient.socialSecurityNumber;
+            else
+                return 'No patient information found.';
+        }
+
+        function find() {
+            var id = $('#patientId').val();
+            $.getJSON(uri + '/' + id).done(function (data) {
+                $('#patient').text(formatPatientInfo(data));
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#patient').text('Error: ' + err);
+            });
+        }
+    </script>
+</body>
+</html>
