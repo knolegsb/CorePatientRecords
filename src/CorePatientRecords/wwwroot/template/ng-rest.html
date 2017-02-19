@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="ng-rest.js"></script>
+</head>
+<body ng-app="patientRecordsApp">
+    <div ng-controller="patientController">
+        <ul>
+            <li ng-repeat="patient in patients">
+                {{patient.lastName}}, {{patient.firstName}}
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Repeater</title>
+    <script src="../lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+    <h1>Angular Repeater Array</h1>
+    <h2>Patient Records</h2>
+    <div ng-init="patients=[
+         {lastName:'Smith', firstName:'John', socialSecurityNumber:'123550001'},
+         {lastName:'Doe', firstName:'Jane', socialSecurityNumber:'123550002'},
+         {lastName:'Smith', firstName:'Lisa', socialSecurityNumber:'123550003'},
+         {lastName:'Stark', firstName:'Bruce', socialSecurityNumber:'123550004'},
+         {lastName:'Wayne', firstName:'Tony', socialSecurityNumber:'123550005'},
+         {lastName:'Romanoff', firstName:'Diana', socialSecurityNumber:'123550006'},
+         {lastName:'Prince', firstName:'Natasha', socialSecurityNumber:'123550007'}]">
+        <div ng-repeat="patient in patients">
+            <span ng-show="{{$first}}">It begins!<br /></span>
+            <span ng-show="{{$even}}">/</span>
+            <span ng-show="{{$odd}}">\</span>
+            {{patient.lastName}}, {{patient.firstName}} : {{pateint.socialSecurityNumber}}
+            <span ng-show="{{$last}}"><br />THE END!</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+    <h1>Data Binding in Angular</h1>
+    <h2>Patient Details</h2>
+
+    <ul ng-init="lastName='Smith'; firstName='John';socialSecurityNumber='123450001'">
+        <li>Name: {{lastName}}, {{firstName}}</li>
+        <li>SSN: <span ng-bind="socialSecurityNumber"></span></li>
+    </ul>
+
+    <script src="../lib/angular/angular.js"></script>
+</body>
+</html>

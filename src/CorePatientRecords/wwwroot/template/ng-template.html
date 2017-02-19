@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+    <div ng-init="lastName='Smith'; firstName='John'; socialSecurityNumber='123450001'">
+        Last Name:<br /><input ng-model="lastName" />{{lastName}}
+        <br />
+        First Name: <br /><input ng-model="firstName" />{{firstName}}
+        <br />
+        SSN: <br /><input ng-model="socialSecurityNumber" />{{socialSecurityNumber}}
+    </div>
+</body>
+</html>
